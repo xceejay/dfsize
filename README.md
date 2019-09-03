@@ -10,10 +10,10 @@ Simple Utililty To Recursively Find Size of Directory and Size of Files in Speci
 + Now type ./configure 
 + Done it's Ready To use
 ## How to use 
-dirsize : Recursively  Calculate Total Size of FILES within current Directory
-file size : Recursively  Calculate Total Size of FILES within current Directory
-dirsize < specified directory > : Recursively  Calculate and show Total Size of specified Directory  
-filesize < specied directory > : Recursively  Calculate Total Size of FILES within specified Directory
++ dirsize : Recursively  Calculate Total Size of FILES within current Directory
++ file size : Recursively  Calculate Total Size of FILES within current Directory
++ dirsize < specified directory > : Recursively  Calculate and show Total Size of specified Directory  
++ filesize < specied directory > : Recursively  Calculate Total Size of FILES within specified Directory
 
 ### Requirements
 openjdk-8-jdk
