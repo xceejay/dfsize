@@ -1,0 +1,24 @@
+#!/bin/bash
+dirpath=~
+sed -i "s|~|$dirpath|g" dirsize.java
+cp dirsize.java ~/;cd ~/;javac dirsize.java;touch dirsize
+echo "alias lf='ls -l | egrep -v ^d'">>~/.bashrc
+echo "alias lr='ls -lRh'">>~/.bashrc
+echo >>~/.bashrc
+echo 'dirsize(){ #Recursively  Calculate Total Size of specified Directory
+if [ $# -eq 0 ]		
+then
+	lr |grep ^total|sed s/total//g> ~/dirsize;cd ~/ && java dirsize;printf "  " ;echo $OLDPWD;bd;
+else
+	olddir=$PWD;cd "$*";lr |grep ^total|sed s/total//g> ~/dirsize;cd ~/ && java dirsize;printf "  " ;echo $OLDPWD;bd;cd $olddir;
+fi
+}
+filesize(){ #Recursively  Calculate Total Size of FILES within specified Directory
+if [ $# -eq 0 ]	
+then
+	lf |grep ^total|sed s/total//g> ~/dirsize;cd ~/ && java dirsize;printf "   " ;echo $OLDPWD;bd;
+else
+	olddir=$PWD;cd "$*";lf |grep ^total|sed s/total//g> ~/dirsize;cd ~/ && java dirsize;printf "  " ;echo $OLDPWD;bd;cd $olddir;
+fi
+} 
+'>>~/.bashrc
